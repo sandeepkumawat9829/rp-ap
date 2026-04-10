@@ -115,6 +115,9 @@ if __name__ == "__main__":
     parser.add_argument("--train_attn_decay", default=False, action="store_true")
     parser.add_argument("--attn_decay_scale", type=float, default=0.0)
     parser.add_argument("--fixed_alpha", type=float, default=0.5, help="Fixed alpha for FixedAlphaPowerformer ablation")
+    parser.add_argument("--channel_gate", action="store_true", default=False, help="AdaptivePowerformer: per-channel gating instead of scalar")
+    parser.add_argument("--simple_gate", action="store_true", default=False, help="AdaptivePowerformer ablation: use simple [mean,std] gate")
+    parser.add_argument("--simple_linear", action="store_true", default=False, help="AdaptivePowerformer ablation: use naive linear instead of DLinear decomposition")
 
     # Formers
     parser.add_argument(
